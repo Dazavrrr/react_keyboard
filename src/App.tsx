@@ -4,7 +4,7 @@ type State = {
   pressedKey: string | null;
 };
 
-export class App extends React.Component {
+export class App extends React.Component<{}, State> {
   state: Readonly<State> = {
     pressedKey: null,
   };
@@ -26,7 +26,7 @@ export class App extends React.Component {
 
     return (
       <div className="App">
-        {this.state.pressedKey ? (
+        {pressedKey ? (
           <p className="App__message">The last pressed key is [{pressedKey}]</p>
         ) : (
           <p className="App__message">Nothing was pressed yet</p>
